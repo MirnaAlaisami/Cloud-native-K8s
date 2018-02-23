@@ -1,12 +1,12 @@
 spring:
   rabbitmq:
-    host: 192.168.99.100
-    port: 5672
-    username: admin
-    password: admin
+    host: ${RABBIT_URL}
+    port: ${RABBIT_PORT}
+    username: ${RABBIT_USER}
+    password: ${RABBIT_PASS}
 
 server:
-  port: 9084
+  port: ${CONTAINER_PORT}
 
     
 eureka:

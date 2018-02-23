@@ -4,14 +4,16 @@ metadata:
   namespace: todo-cn-app
   name: todo-db
   labels: 
-    name: todo-db
+    app: todo-db
 spec: 
+  type: NodePort
   ports:
-    # the port that this service should serve on
-    - port: 3306
-  # label keys and values that must match in order to receive traffic for this service
-  selector: 
+  - port: 3306
     name: todo-db
+    targetPort: 3306
+  selector: 
+    app: todo-db
+  type: NodePort
 ---
 apiVersion: apps/v1beta2
 kind: Deployment
@@ -33,8 +35,6 @@ spec:
       containers:
       - name: mysql
         image: mysql:latest
-        ports:
-        - containerPort: 3306
         env:
         - name: MYSQL_USER
           value: mirna
@@ -44,8 +44,6 @@ spec:
           value: mydb
         - name: MYSQL_ROOT_PASSWORD
           value: password
-        - name: MYSQL_ROOT_HOST
-          value: 192.168.99.100
         ports:
         - containerPort: 3306
           name: mysql

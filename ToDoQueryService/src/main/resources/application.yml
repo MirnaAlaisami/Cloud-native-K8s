@@ -3,12 +3,12 @@ spring:
     hibernate:
       ddl-auto: create
   datasource:
-    url: jdbc:mysql://192.168.99.100:3306/mydb
-    username: root
-    password: password
+    url: jdbc:mysql:${DB_URL}
+    username: ${DB_USER}
+    password: ${DB_PASS}
 
 server:
-  port: 9082
+  port: ${CONTAINER_PORT}
 
 eureka:
   client:

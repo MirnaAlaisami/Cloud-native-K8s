@@ -35,11 +35,11 @@ spec:
       containers:
       - name: todoserviceregistry
         image: mirna/todoserviceregistry
-        resources:
-          requests:
-            memory: "512Mi"
         ports:
         - containerPort: 8761
+        env:
+        - name: CONTAINER_PORT
+          value: "8761"
 
     
     

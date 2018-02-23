@@ -35,14 +35,21 @@ spec:
       containers:
       - name: todoqueryservice
         image: mirna/todoqueryservice
-        resources:
-          requests:
-            memory: "256Mi"
         ports:
         - containerPort: 9082
         env:
         - name: EUREKA_URL
-          value: "http://todoserviceregistry:8761/eureka"  
+          value: "http://todoserviceregistry:8761/eureka"
+        - name: DB_URL
+          value: "//todo-db:3306/mydb"
+        - name: DB_USER
+          value: "root"
+        - name: DB_PASS
+          value: "password"
+        - name: CONTAINER_PORT
+          value: "9082"                    
+
+
 
     
     

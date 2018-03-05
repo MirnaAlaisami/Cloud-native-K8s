@@ -48,7 +48,7 @@ spec:
           value: "admin"
         - name: RABBIT_PASS
           value: "admin"
-        - name: CONTAINER_PORT
+        - name: SERVER_PORT
           value: "9084"              
 
     

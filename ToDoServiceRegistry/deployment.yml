@@ -38,7 +38,7 @@ spec:
         ports:
         - containerPort: 8761
         env:
-        - name: CONTAINER_PORT
+        - name: SERVER_PORT
           value: "8761"
 
     

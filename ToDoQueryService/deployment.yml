@@ -46,7 +46,7 @@ spec:
           value: "root"
         - name: DB_PASS
           value: "password"
-        - name: CONTAINER_PORT
+        - name: SERVER_PORT
           value: "9082"                    
 
 
